@@ -1,6 +1,5 @@
 // pages/api/qr.ts
 import type { NextApiRequest, NextApiResponse } from "next";
-// Use require to avoid TS type requirement
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const QRCode = require("qrcode");
 
