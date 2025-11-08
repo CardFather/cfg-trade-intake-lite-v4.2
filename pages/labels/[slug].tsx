@@ -67,10 +67,10 @@ function OneLabel({ trade, targetUrl }: { trade: any; targetUrl: string }) {
         <div style={right}>
           {targetUrl && (
             <img
-              src={`/api/qr?data=${encodeURIComponent(targetUrl)}`}
-              alt="QR"
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
+  src={`https://chart.googleapis.com/chart?cht=qr&chs=600x600&chld=M|2&chl=${encodeURIComponent(targetUrl)}`}
+  alt="QR"
+  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+/>
           )}
         </div>
       </div>
