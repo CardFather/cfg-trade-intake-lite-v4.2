@@ -30,11 +30,13 @@ export default function LabelPage() {
   return (
     <div>
       <style jsx global>{`
-        @page { size: 4in 6in; margin: 0; }
-        @media print { body { margin: 0; }
-          .page { page-break-after: always; }
-        }
-      `}</style>
+  @page { size: 4in 6in; margin: 0; }
+  @media print {
+    html, body { margin: 0; padding: 0; background: #fff; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  html, body { background: #fff; } /* keep screen preview white too */
+`}</style>
       {Array.from({ length: copies }).map((_, i) => (
         <div className="page" key={i}>
           <OneLabel trade={trade} targetUrl={targetUrl} />
