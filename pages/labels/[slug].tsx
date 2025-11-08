@@ -63,10 +63,10 @@ export default function LabelPage(){
       <style jsx global>{`
         @page { size: 4in 6in; margin: 0; }
         @media print {
-          html, body { background: #fff; margin: 0; padding: 0; }
+          html, body { background: #000; margin: 0; padding: 0; }
           * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
-        html, body { background: #fff; }
+        html, body { background: #000; }
       `}</style>
       {items.map((i)=> (
         <div key={i} style={outer}>
