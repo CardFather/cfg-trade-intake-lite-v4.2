@@ -83,24 +83,45 @@ function OneLabel({ trade, targetUrl }: { trade: any; targetUrl: string }) {
   );
 }
 
-// --- styles ---
+// --- styles (high-contrast for thermal) ---
 const wrap: React.CSSProperties = {
-  width: "4in", height: "6in",
+  width: "4in",
+  height: "6in",
   boxSizing: "border-box",
-  padding: "0.35in",
+  padding: "0.30in",
+  background: "#fff",
+  color: "#000",
   fontFamily: "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto",
-  display: "flex", flexDirection: "column", justifyContent: "space-between",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
 };
+
 const grid: React.CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "1.8fr 1fr",
-  gap: "0.2in",
+  gridTemplateColumns: "2fr 1.2fr", // give text more space
+  gap: "0.18in",
   alignItems: "center",
 };
+
 const left: React.CSSProperties = { display: "flex", flexDirection: "column", gap: "0.06in" };
-const right: React.CSSProperties = { width: "1.8in", height: "1.8in" };
-const queue: React.CSSProperties = { fontSize: "1.2in", fontWeight: 900, lineHeight: 1 };
-const name: React.CSSProperties = { fontSize: "0.35in", fontWeight: 700, marginTop: "0.04in" };
-const meta: React.CSSProperties = { fontSize: "0.22in", opacity: 0.9 };
-const metaSmall: React.CSSProperties = { fontSize: "0.18in", opacity: 0.7 };
-const footer: React.CSSProperties = { marginTop: "0.1in", fontSize: "0.18in", opacity: 0.7, wordBreak: "break-all" };
+const right: React.CSSProperties = { width: "2.2in", height: "2.2in" };
+
+// Large queue number, very bold
+const queue: React.CSSProperties = { fontSize: "1.6in", fontWeight: 900, lineHeight: 1, color: "#000" };
+
+// Big name line
+const name: React.CSSProperties = { fontSize: "0.50in", fontWeight: 800, marginTop: "0.02in", color: "#000" };
+
+// Meta lines: no opacity, a bit larger
+const meta: React.CSSProperties = { fontSize: "0.28in", fontWeight: 600, color: "#000" };
+const metaSmall: React.CSSProperties = { fontSize: "0.24in", fontWeight: 600, color: "#000" };
+
+// URL footer: readable, no gray
+const footer: React.CSSProperties = {
+  marginTop: "0.06in",
+  fontSize: "0.22in",
+  fontWeight: 600,
+  color: "#000",
+  wordBreak: "break-all",
+};
